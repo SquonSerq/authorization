@@ -2,16 +2,22 @@ import React from 'react'
 
 class Index extends React.Component {
 
-  respo = '';
+  constructor(props){
+    super(props);
+    this.state = { respo: '' };
+  }
 
   componentDidMount(){
-    fetch("http://lvh.me:3001")
-    .then(response => response.json())
-    .then(datas => this.respo = datas);
+    fetch("http://localhost:3001")
+    .then(response => { return response.text() })
+    .then(datas => {
+      this.setState({respo: datas})
+      return
+    })
   }
 
   render() {
-    return <>{this.respo}</>
+    return <>{this.state.respo}</>
   }
 }
 
