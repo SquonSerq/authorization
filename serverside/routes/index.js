@@ -11,4 +11,8 @@ router.get('/', function(req, res) {
   res.json(infoJson);
 });
 
+router.get('/test', function(req, res){
+  console.log(req.body);
+})
+
 module.exports = router;
