@@ -21,4 +21,8 @@ router.post('/register', function(req, res, next){
   res.send("successful");
 })
 
+router.post('/login', function(req, res, next){
+  
+})
+
 module.exports = router;
