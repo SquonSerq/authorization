@@ -7,7 +7,15 @@ class dao{
     }
 
     runQuery(query){
-        this.db.run(query);
+        return this.db.run(query, (res, err) =>{
+            if(err){
+                console.log(err);
+            }
+        });
+    }
+
+    getQuery(query, cb){
+        this.db.get(query, cb);
     }
 
     closeDb(){
